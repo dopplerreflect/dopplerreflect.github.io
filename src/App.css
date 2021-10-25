@@ -4,8 +4,19 @@ html {
 }
 
 .App {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: center url(./images/SpiralStar.svg);
+  background-size: cover;
   height: 100vh;
+}
+
+.Header {
+  font-size: 2.5em;
+  font-weight: bold;
+  padding: 0.5em;
+  border-bottom: 1px solid hsl(45, 100%, 50%);
+  background: hsla(240, 100%, 5%, 0.75);
+}
+.Header img {
+  vertical-align: middle;
+  height: 2em;
 }
