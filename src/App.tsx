@@ -1,11 +1,12 @@
 import './App.css';
 import DRLogo from './dr-logo.svg';
+import Title from './title-filter.svg';
 function App() {
   return (
     <div className="App">
       <header>
-        <img src={DRLogo} />
-        dopplerreflect.art
+        <img id="logo" src={DRLogo} />
+        <img id="title" src={Title} />
       </header>
       <main>
         <h1>About</h1>
