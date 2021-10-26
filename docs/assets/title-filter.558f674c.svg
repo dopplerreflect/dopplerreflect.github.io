@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 225 34">
+  <defs>
+    <filter id="glow" >
+      <feMorphology in="SourceGraphic" operator="dilate" radius="3" result="dilate" />
+      <feFlood in="dilate" flood-color="hsl(45, 100%, 50%)" flood-opacity="1" result="color" />
+      <feComposite in="color" in2="dilate" operator="in" result="composite" />
+      <feGaussianBlur in="composite" stdDeviation="2" result="blur" />
+
+      <feMorphology in="SourceGraphic" operator="dilate" radius="1" result="dilate2" />
+      <feFlood in="dilate" flood-color="hsl(45, 100%, 10%)" flood-opacity="1" result="color2" />
+      <feComposite in="color2" in2="dilate" operator="in" result="composite2" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="composite2" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <text filter="url(#glow)" x="5" y="24" fill="hsl(45, 100%, 50%)" font-size="24px" font-weight="bold">dopplerreflect</text>
+</svg>
