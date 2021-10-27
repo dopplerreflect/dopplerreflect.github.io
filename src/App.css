@@ -5,8 +5,9 @@ html {
 
 .App {
   background: center url(./images/SpiralStar.svg);
+  background-repeat: repeat-y;
   background-size: cover;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 header,

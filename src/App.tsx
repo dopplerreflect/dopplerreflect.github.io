@@ -1,7 +1,11 @@
 import './App.css';
 import DRLogo from './dr-logo.svg';
 import Title from './title-filter.svg';
+import { images } from './images/index';
+
 function App() {
+  console.log(DRLogo);
+  console.log(images);
   return (
     <div className="App">
       <header>
@@ -9,6 +13,9 @@ function App() {
         <img id="title" src={Title} />
       </header>
       <main>
+        {images.map(image => (
+          <img key={image} src={image} width="25%" />
+        ))}
         <h1>About</h1>
         <p>
           Hello, I'm <strong>doppler</strong>, aka David Rose.
