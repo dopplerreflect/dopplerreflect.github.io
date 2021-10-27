@@ -1,11 +1,29 @@
 import './App.css';
 import DRLogo from './dr-logo.svg';
+import CloseButton from './close-button.svg';
 import Title from './title-filter.svg';
-import { images } from './images/index';
+import { images, ImageDetail } from './images/index';
+
+const sanitize = (s: string): string => s.replace(/[^\w]/, '').toLowerCase();
+
+const hideImageDetails = (): void =>
+  document
+    .querySelectorAll('.Detail')
+    .forEach(d => d.classList.remove('visible'));
+
+const displayImageDetails = (image: ImageDetail) => {
+  hideImageDetails();
+  const detailsDiv = document.querySelector(`.Detail#${sanitize(image.title)}`);
+  detailsDiv?.classList.add('visible');
+};
+
+const handleKeyPress = (event: KeyboardEvent) => {
+  if (event.code === 'Escape') hideImageDetails();
+};
+
+document.addEventListener('keydown', handleKeyPress);
 
 function App() {
-  console.log(DRLogo);
-  console.log(images);
   return (
     <div className="App">
       <header>
@@ -13,9 +31,14 @@ function App() {
         <img id="title" src={Title} />
       </header>
       <main>
-        {images.map(image => (
-          <img key={image} src={image} width="25%" />
-        ))}
+        <div id="Gallery">
+          {images.map(image => (
+            <div className="Image" key={image.src}>
+              <img src={image.src} onClick={() => displayImageDetails(image)} />
+              <ImageDetailCard image={image} />
+            </div>
+          ))}
+        </div>
         <h1>About</h1>
         <p>
           Hello, I'm <strong>doppler</strong>, aka David Rose.
@@ -35,3 +58,18 @@ function App() {
 }
 
 export default App;
+type ImageDetailProps = {
+  image: ImageDetail;
+};
+const ImageDetailCard = ({ image }: ImageDetailProps) => (
+  <div className="Detail" id={sanitize(image.title)}>
+    <h1>{image.title}</h1>
+    <p dangerouslySetInnerHTML={{ __html: image.desc }} />
+    <img src={image.src} />
+    <img
+      src={CloseButton}
+      className="CloseButton"
+      onClick={() => hideImageDetails()}
+    />
+  </div>
+);
