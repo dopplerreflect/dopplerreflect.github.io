@@ -1,24 +1,27 @@
 <svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <filter style="color-interpolation-filters:sRGB" id="a" x="-.26" y="-.145" width="1.487" height="1.434">
-      <feGaussianBlur stdDeviation="16" in="SourceAlpha" result="result1"/>
-      <feOffset dx="-8" dy="18" in="result1" result="result5"/>
-      <feSpecularLighting result="result2" lighting-color="#FFF" surfaceScale="15" specularExponent="20">
+      <feGaussianBlur stdDeviation="16" in="SourceAlpha" result="blur"/>
+      <feOffset dx="-8" dy="18" in="blur" result="offset"/>
+      <feSpecularLighting result="lighting" lighting-color="#FFF" surfaceScale="15" specularExponent="20">
         <fePointLight x="960" y="130"/>
       </feSpecularLighting>
-      <feComposite in2="SourceAlpha" in="result2" operator="in" result="result3"/>
-      <feComposite in2="result3" in="SourceGraphic" operator="arithmetic" k2="1" k3="1" result="result4"/>
+      <feComposite in2="SourceAlpha" in="lighting" operator="in" result="alpha-lighting"/>
+      <feComposite in2="alpha-lighting" in="SourceGraphic" operator="arithmetic" k2="1" k3="1" result="graphic-alpha-lighting"/>
       <feMerge>
-        <feMergeNode in="result5"/>
-        <feMergeNode in="result4"/>
+        <feMergeNode in="offset"/>
+        <feMergeNode in="graphic-alpha-lighting"/>
       </feMerge>
     </filter>
   </defs>
-  <!-- <path fill="hsl(225, 100%, 10%)" d="M0 0h1080v1080H0z"/> -->
-  <circle cx="540" cy="540" r="333.738" fill="none" stroke="hsl(225, 100%, 75%)" stroke-width="10"/>
-  <circle cx="540" cy="540" r="127.477" fill="none" stroke="hsl(225, 100%, 75%)" stroke-width="10"/>
-  <circle cx="540" cy="540" r="206.262" fill="none" stroke="hsl(225, 100%, 75%)" stroke-width="10"/>
-  <path d="m540 206.262 74.929 230.607h242.475L661.238 579.392 736.166 810 540 667.477 343.834 810l74.928-230.608L222.596 436.87h242.475Z" fill="none" stroke="hsl(225, 100%, 75%)" stroke-width="20" />
-  <path d="M540 206.262A333.738 333.738 0 1 1 343.834 810Z" fill="none" stroke="hsl(225, 100%, 50%)" stroke-width="61.937" filter="url(#shiny)" style="fill:none;fill-opacity:1;filter:url(#a)"/>
-  <path d="M361.372 436.87a206.262 206.262 0 1 1 331.91 241.146L736.166 810 540 667.477l-83.894 60.952a206.262 206.262 0 0 1-69.388-50.413l78.353-241.147z" fill="none" stroke="#ffbf00" stroke-width="61.937" filter="url(#shiny)" style="fill:none;fill-opacity:1;filter:url(#a)" transform="matrix(1.00306 0 0 .99717 -1.733 1.398)"/>
+  <g id="circles"  fill="none" stroke="hsl(225, 100%, 75%)" stroke-width="20">
+  <circle cx="540" cy="540" r="333.738"/>
+  <circle cx="540" cy="540" r="127.477"/>
+  <circle cx="540" cy="540" r="206.262"/>
+  </g>
+  <path id="star" d="m540 206.262 74.929 230.607h242.475L661.238 579.392 736.166 810 540 667.477 343.834 810l74.928-230.608L222.596 436.87h242.475Z" fill="none" stroke="hsl(225, 100%, 75%)" stroke-width="20" />
+  <g id="letters" filter="url(#a)" stroke-width="61.937" fill="none">
+  <path id="D" d="M540 206.262A333.738 333.738 0 1 1 343.834 810Z" stroke="hsl(225, 100%, 50%)" filter="url(#a)" />
+  <path id="R" d="M361.372 436.87a206.262 206.262 0 1 1 331.91 241.146L736.166 810 540 667.477l-83.894 60.952a206.262 206.262 0 0 1-69.388-50.413l78.353-241.147z" stroke="#ffbf00" filter="url(#a)" />
+  </g>
 </svg>
