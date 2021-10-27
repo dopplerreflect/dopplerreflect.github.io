@@ -52,6 +52,9 @@ a {
   width: calc((100vw - 3em) / 4);
   height: calc((100vw - 3em) / 4);
 }
+#Gallery > .Image img {
+  width: 100%;
+}
 #Gallery > .Image:hover {
   cursor: pointer;
 }
