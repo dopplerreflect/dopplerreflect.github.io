@@ -81,3 +81,7 @@ a {
 #Gallery > .Image .Detail.visible {
   display: block;
 }
+
+#Connect .social-icon {
+  margin: 1em;
+}
