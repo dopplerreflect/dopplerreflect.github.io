@@ -21,6 +21,9 @@
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css2?family=Righteous);
+    </style>
   </defs>
   <g filter="url(#glow)">
   <text 
@@ -29,6 +32,7 @@
     font-size="24px" 
     font-weight="bold"
     text-anchor="end"
+    font-family="Righteous"
   >
     doppler
   </text>
@@ -37,6 +41,7 @@
     fill="hsl(215, 100%, 50%)" 
     font-size="24px" 
     font-weight="bold"
+    font-family="Righteous"
   >
     reflect
   </text>

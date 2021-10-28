@@ -6,7 +6,12 @@ import Epicycloid from './Epicycloid.svg';
 import MaurerRose from './MaurerRose-n5-d143.svg';
 import SpiralStar from './SpiralStar.svg';
 import StarMandala from './StarMandala.svg';
-import Title from '../title-filter.svg';
+import BlueprintStarMandala from './BlueprintStarMandala.svg';
+import FlowerOfLife from './FlowerOfLife.svg';
+import HexSunflower from './HexSunflower.svg';
+import Metatron from './Metatron.svg';
+
+import Title from '../title-filter-e.svg';
 
 export type ImageDetail = {
   src: string;
@@ -32,14 +37,19 @@ const images: ImageList = [
     desc: 'From Wikipedia: "In geometry, an epicycloid is a plane curve produced by tracing the path of a chosen point on the circumference of a circle—called an epicycle—which rolls without slipping around a fixed circle"',
   },
   {
+    src: Metatron,
+    title: "Metatron's Cube",
+    desc: 'A sacred geometry figure.',
+  },
+  {
     src: Cardioid,
     title: 'Cardioid',
     desc: 'Colored dots arranged in a <a href="https://en.wikipedia.org/wiki/Cardioid" target="_blank">Cardioid</a> pattern.',
   },
   {
-    src: CornerReflector,
-    title: 'Corner Reflector',
-    desc: 'Divide the sides of square into golden sections and bounce a line from a corner off of it, and add some translucent colors.',
+    src: HexSunflower,
+    title: 'Hexagon Sunflower',
+    desc: 'Sunflower pattern made with hexagons',
   },
   {
     src: MaurerRose,
@@ -55,6 +65,21 @@ const images: ImageList = [
     src: SpiralStar,
     title: 'SpiralStar',
     desc: 'Lots of stars. And the golden ratio. And spirals. And gradients. This is the basis for a small batch of jerseys I have on order.',
+  },
+  {
+    src: BlueprintStarMandala,
+    title: 'Blueprint',
+    desc: 'Mandala built on a blueprint of rings spaced on golden divisions.',
+  },
+  {
+    src: FlowerOfLife,
+    title: 'Flower of Life',
+    desc: 'Flower of Life mandala.',
+  },
+  {
+    src: CornerReflector,
+    title: 'Corner Reflector',
+    desc: 'Divide the sides of square into golden sections and bounce a line from a corner off of it, and add some translucent colors.',
   },
   {
     src: Title,

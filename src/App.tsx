@@ -1,10 +1,10 @@
 import './App.css';
 import DRLogo from './dr-logo.svg';
 import CloseButton from './close-button.svg';
-import Title from './title-filter.svg';
+import Title from './title-filter-e.svg';
 import { images, ImageDetail } from './images/index';
 import { SocialIcon } from 'react-social-icons';
-const sanitize = (s: string): string => s.replace(/[^\w]/, '').toLowerCase();
+const sanitize = (s: string): string => s.replace(/[^\w]/g, '').toLowerCase();
 
 const hideImageDetails = (): void =>
   document
