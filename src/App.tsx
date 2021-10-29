@@ -4,6 +4,8 @@ import CloseButton from './close-button.svg';
 import Title from './title-filter-e.svg';
 import { images, ImageDetail } from './images/index';
 import { SocialIcon } from 'react-social-icons';
+import { useEffect, useRef } from 'react';
+
 const sanitize = (s: string): string => s.replace(/[^\w]/g, '').toLowerCase();
 
 const hideImageDetails = (): void =>
@@ -11,19 +13,37 @@ const hideImageDetails = (): void =>
     .querySelectorAll('.Detail')
     .forEach(d => d.classList.remove('visible'));
 
-const displayImageDetails = (image: ImageDetail) => {
-  hideImageDetails();
-  const detailsDiv = document.querySelector(`.Detail#${sanitize(image.title)}`);
-  detailsDiv?.classList.add('visible');
-};
-
-const handleKeyPress = (event: KeyboardEvent) => {
-  if (event.code === 'Escape') hideImageDetails();
-};
-
-document.addEventListener('keydown', handleKeyPress);
-
 function App() {
+  const scrollY = useRef(0);
+  const detailsDiv = useRef<Element | null>(null);
+
+  const handleScroll = () => {
+    scrollY.current = window.scrollY;
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const displayImageDetails = (image: ImageDetail) => {
+    hideImageDetails();
+    detailsDiv.current = document.querySelector(
+      `.Detail#${sanitize(image.title)}`
+    );
+    if (detailsDiv.current) {
+      console.log(scrollY.current);
+      detailsDiv.current.setAttribute('style', `top:${scrollY.current}`);
+      detailsDiv.current.classList.add('visible');
+    }
+  };
+
+  const handleKeyPress = (event: KeyboardEvent) => {
+    if (event.code === 'Escape') hideImageDetails();
+  };
+
+  document.addEventListener('keydown', handleKeyPress);
+
   return (
     <div className="App">
       <header>

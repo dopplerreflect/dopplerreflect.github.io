@@ -3,8 +3,11 @@
 html {
   color: hsl(45, 100%, 50%);
   background-color: hsl(240, 100%, 2.5%);
+  box-sizing: border-box;
 }
-
+html::-webkit-scrollbar {
+  display: none;
+}
 .App {
   background: center url(./images/SpiralStar.svg);
   background-repeat: repeat-y;
@@ -62,13 +65,16 @@ a {
 }
 #Gallery > .Image .Detail {
   display: none;
-  position: absolute;
-  top: -1em;
-  left: -1em;
-  width: calc(100vw - 2px - 2em);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background: hsla(240, 100%, 5%, 0.95);
-  border: 1px solid hsl(240, 100%, 95%);
-  padding: 0.5em;
+}
+#Gallery > .Image .Detail img {
+  margin-left: calc(50% - 40vmin);
+  width: 80vmin;
 }
 #Gallery > .Image .Detail .CloseButton {
   width: 3em;
