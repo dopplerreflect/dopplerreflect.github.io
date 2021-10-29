@@ -8,6 +8,7 @@ import SpiralStar from './SpiralStar.svg';
 import StarMandala from './StarMandala.svg';
 import BlueprintStarMandala from './BlueprintStarMandala.svg';
 import FlowerOfLife from './FlowerOfLife.svg';
+import FlowerOfLife2 from './FlowerOfLife2.svg';
 import HexSunflower from './HexSunflower.svg';
 import Metatron from './Metatron.svg';
 
@@ -75,6 +76,11 @@ const images: ImageList = [
     src: FlowerOfLife,
     title: 'Flower of Life',
     desc: 'Flower of Life mandala.',
+  },
+  {
+    src: FlowerOfLife2,
+    title: 'Flower of Life 2',
+    desc: 'A complete rewrite of the previous Flower of Life drawing, with better masking for transparency.',
   },
   {
     src: CornerReflector,
