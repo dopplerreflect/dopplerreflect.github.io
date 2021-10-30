@@ -1,6 +1,6 @@
 import Cardioid from './Cardioid.svg';
 import CornerReflector from './CornerReflector.svg';
-import DRLogo from '../dr-logo.svg';
+import DRLogo from './DRLogo.svg';
 import Elliptical from './Elliptical.svg';
 import Epicycloid from './Epicycloid.svg';
 import MaurerRose from './MaurerRose-n5-d143.svg';
