@@ -11,6 +11,7 @@ import FlowerOfLife from './FlowerOfLife.svg';
 import FlowerOfLife2 from './FlowerOfLife2.svg';
 import HexSunflower from './HexSunflower.svg';
 import Metatron from './Metatron.svg';
+import Tesseract from './Tesseract.svg';
 
 import Title from '../title-filter-e.svg';
 
@@ -28,6 +29,11 @@ const images: ImageList = [
     desc: 'Stylized D and R constructed on a pentagram.',
   },
   {
+    src: FlowerOfLife2,
+    title: 'Flower of Life 2',
+    desc: 'A complete rewrite of the previous Flower of Life drawing, with better masking for transparency.',
+  },
+  {
     src: StarMandala,
     title: 'Star Mandala',
     desc: 'Mandala drawn with quadratic bezier curves using rings spaced according to golden ratio as a guide.',
@@ -41,6 +47,11 @@ const images: ImageList = [
     src: Metatron,
     title: "Metatron's Cube",
     desc: 'A sacred geometry figure.',
+  },
+  {
+    src: Tesseract,
+    title: 'Tesseract',
+    desc: 'A 2-D representation of a 4-D cube.',
   },
   {
     src: Cardioid,
@@ -76,11 +87,6 @@ const images: ImageList = [
     src: FlowerOfLife,
     title: 'Flower of Life',
     desc: 'Flower of Life mandala.',
-  },
-  {
-    src: FlowerOfLife2,
-    title: 'Flower of Life 2',
-    desc: 'A complete rewrite of the previous Flower of Life drawing, with better masking for transparency.',
   },
   {
     src: CornerReflector,
