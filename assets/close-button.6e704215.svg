@@ -1,0 +1,9 @@
+<svg id="CloseButton" xmlns="http://www.w3.org/2000/svg" viewBox="-32 -32 64 64">
+  <defs>
+    <line id="line" x1="-24" x2="24" y1="0" y2="0" stroke="white" stroke-width="4" stroke-linecap="round" />
+  </defs>
+  <!-- <path d="M-32,-32H32V32H-32Z" fill="black" /> -->
+  <circle stroke="white" r="30" stroke-width="4" fill="black" />
+  <use href="#line" transform="rotate(45)" />
+  <use href="#line" transform="rotate(-45)" />
+</svg>
