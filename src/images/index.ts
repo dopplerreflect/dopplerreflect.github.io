@@ -14,6 +14,9 @@ import HexSunflower from './HexSunflower.svg';
 import Metatron from './Metatron.svg';
 import Tesseract from './Tesseract.svg';
 import StainedGlass from './StainedGlass.png';
+import YinYangThang from './YinYangThang.svg';
+import StarsStarsStars from './StarsStarsStars.svg';
+import VenusOrbits from './VenusOrbits.svg';
 
 import Title from '../title-filter-e.svg';
 
@@ -49,6 +52,16 @@ const images: ImageList = [
     src: StainedGlass,
     title: 'Stained Glass',
     desc: 'Translucent image simulating stained glass.',
+  },
+  {
+    src: StarsStarsStars,
+    title: 'Nested Pentagrams',
+    desc: 'More Phi magic: The regular 5-pointed star and the Golden Proportion is truly magical.',
+  },
+  {
+    src: YinYangThang,
+    title: 'Yin Yang Thang',
+    desc: 'Yin and Yang getting a bit out of balance, yet maintaining some semblance of symmetry.',
   },
   {
     src: StarMandala,
@@ -89,6 +102,11 @@ const images: ImageList = [
     src: Tesseract,
     title: 'Tesseract',
     desc: 'A 2-D representation of a 4-D cube.',
+  },
+  {
+    src: VenusOrbits,
+    title: 'Venus Orbits',
+    desc: "For every eight orbits Earth makes around the Sun, Venus makes thirteen. If you were to periodically draw a line between the two planets over a thirteen year timeframe, you'd get this.",
   },
   {
     src: Cardioid,
